@@ -21,7 +21,7 @@ const About = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="about-title">About Tara Studios</h1>
+          <h1 className="about-title">About Taraa Studios</h1>
           <h2 className="about-subtitle">WE ARE BUILT ON CINEMA.</h2>
           <p className="about-desc">
             ROOTED IN CRAFT, EMOTION, <br /> AND UNCOMPROMISING QUALITY.
