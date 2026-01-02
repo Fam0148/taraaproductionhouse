@@ -20,7 +20,7 @@ const Footer = () => {
           {/* Link wrapper with scrollToTop on click */}
           <Link to="/" className="footer-logo" onClick={scrollToTop}>
             <FaFilm style={{ color: '#D4AF37', fontSize: '3rem' }} />
-            <span>Taraa</span>
+            <span>TARAAa</span>
           </Link>
         </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
           <address className="address-text">
             Street Name, Area<br />
             City, State, Country<br /><br />
-            contact@Taraa.com
+            contact@TARAAa.com
           </address>
         </div>
 
@@ -60,7 +60,7 @@ const Footer = () => {
 
       {/* COPYRIGHT BAR */}
       <div className="footer-bottom">
-        All Rights Reserved | Taraa Studios {currentYear} ©
+        All Rights Reserved | TARAAa Studios {currentYear} ©
       </div>
     </footer>
   );

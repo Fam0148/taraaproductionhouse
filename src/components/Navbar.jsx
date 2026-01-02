@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       {/* LOGO: Changed from div to Link to redirect to Home */}
       <Link to="/" className="logo" onClick={closeMobileMenu}>
-        <FaFilm className="icon-gold" /> Taraa STUDIOS
+        <FaFilm className="icon-gold" /> TARAAa STUDIOS
       </Link>
 
       {/* Hamburger Icon (Visible on Mobile) */}
