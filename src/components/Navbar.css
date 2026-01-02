@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
+  padding: 30px 50px;
   
   /* Sticky Settings */
   position: fixed;
@@ -34,8 +34,6 @@
   transform: translateX(-50%); /* Center perfectly */
   width: 50%; /* Only take up half the screen */
   height: 1px; /* Thickness */
-  background: rgba(212, 175, 55, 0.3); /* Gold color */
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); /* Optional: Add a glow */
 }
 
 /* --- LOGO STYLING --- */
