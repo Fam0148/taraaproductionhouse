@@ -1,0 +1,270 @@
+/* src/pages/Contact.css */
+
+.contact-container {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- HERO SECTION --- */
+.contact-hero {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 40px;
+}
+
+.contact-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.contact-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: var(--color-gold);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  line-height: 1.2;
+}
+
+/* --- FORM WRAPPER --- */
+.form-wrapper {
+  width: 100%;
+  max-width: 800px; 
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 5;
+  margin-top: -60px; 
+}
+
+.contact-form {
+  background: #111;
+  background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+  border: 1px solid var(--color-gold);
+  border-radius: 20px;
+  padding: 60px 50px; 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* --- INPUT GROUPS --- */
+.form-group {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  gap: 20px;
+  width: 100%;
+}
+
+.textarea-group {
+  align-items: flex-start; 
+}
+
+/* --- LABELS --- */
+.form-label {
+  font-family: 'Open Sauce', sans-serif;
+  color: #FFF;
+  width: 120px; /* Width to accommodate 'MESSAGE * :' */
+  min-width: 120px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 1px;
+  
+  /* Forces text to stay on one line (keeps colon with text) */
+  white-space: nowrap; 
+}
+
+.input-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- INPUTS & TEXTAREAS --- */
+.form-input {
+  flex: 1;
+  width: 100%; 
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 10px 0;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-input:focus {
+  border-bottom: 2px solid #FFF;
+}
+
+.form-textarea {
+  flex: 1;
+  width: 100%; 
+  height: 150px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-gold);
+  border-radius: 10px;
+  color: #FFF;
+  padding: 15px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  resize: none;
+  box-sizing: border-box; 
+}
+
+/* --- PLACEHOLDER STYLING (Make it very light) --- */
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.2); /* Very subtle transparent white */
+  opacity: 1; /* Firefox fix */
+  font-weight: 300;
+}
+
+.error-msg {
+  color: #ff0404c3;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* --- BUTTONS --- */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn-attach {
+  background: transparent;
+  border: 1px solid #555;
+  color: #AAA;
+  padding: 15px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  box-sizing: border-box; 
+}
+
+.btn-attach:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+
+/* =========================================
+   MOBILE & TABLET RESPONSIVE (Max 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  
+  .contact-container {
+    padding-top: 100px;
+  }
+
+  .contact-hero {
+    height: 35vh;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+    padding: 0 10px;
+  }
+
+  .form-wrapper {
+    width: 90%; 
+    max-width: 100%;
+    margin-top: -40px;
+  }
+
+  .contact-form {
+    padding: 30px 20px; 
+    gap: 20px;
+  }
+
+  .form-group {
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .textarea-group {
+    align-items: flex-start;
+  }
+
+  .form-label {
+    width: 100%; 
+    font-size: 0.9rem;
+    color: #CCC;
+    /* Optional: allow wrap on mobile if screen is tiny */
+    white-space: normal; 
+  }
+
+  .form-input, 
+  .form-textarea,
+  .input-col {
+    width: 100%;
+    font-size: 1rem; 
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .btn-attach {
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+  }
+  
+  .form-actions button[type="submit"], 
+  .form-actions .btn-rounded {
+    width: 100%;
+    margin: 0 !important;
+  }
+}
+
+/* =========================================
+   AUTOFILL FIX (Prevents White Background)
+   ========================================= */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #111 inset !important;
+  -webkit-text-fill-color: var(--color-gold) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  caret-color: var(--color-gold);
+}

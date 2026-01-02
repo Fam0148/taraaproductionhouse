@@ -1,0 +1,187 @@
+/* src/pages/Projects.css */
+
+.projects-container {
+  padding-top: 50px; 
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png') ;
+}
+
+/* --- TOP SECTION: TITLE & GRID --- */
+.projects-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.projects-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-gold);
+  margin-bottom: 10px;
+  text-shadow: 
+    0 0 10px rgba(212, 175, 55, 0.5),
+    0 0 20px rgba(212, 175, 55, 0.3),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.projects-subtitle {
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.projects-desc {
+  color: #888;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* THE GRID SYSTEM */
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; 
+  padding: 0 50px 80px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- THE "COMING SOON" CARD --- */
+.project-card {
+  width: 250px;
+  height: 150px;
+  border: 1px solid var(--color-gold);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  background: rgba(212, 175, 55, 0.1); 
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.card-text {
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  transform: rotate(-15deg);
+  letter-spacing: 2px;
+}
+
+/* --- FEATURED FILM BANNER (Bottom) --- */
+.feature-banner {
+  width: 100%;
+  height: 60vh; 
+  background-image: url('https://images.unsplash.com/photo-1758621514777-a9a2264325e6?q=80&w=1170&auto=format&fit=crop'); 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  
+  /* DESKTOP LAYOUT: Align to bottom */
+  display: flex;
+  align-items: flex-end; 
+  
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, black, transparent);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  
+  /* DESKTOP LAYOUT: Space Between (Left & Right) */
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-end; /* Align items to the bottom line */
+}
+
+.film-title {
+  font-family: 'timesnewroman', serif; 
+  color: #FFF;
+  font-size: 5rem;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  line-height: 1;
+  text-align: left; /* Default left align for desktop */
+}
+
+.streaming-info {
+  text-align: center; /* Default right align for desktop */
+}
+
+.now-streaming {
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE (Max 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* --- Banner Wrapper Adjustments --- */
+  .feature-banner {
+    padding: 40px 20px;
+    height: auto; 
+    min-height: 60vh;
+    
+    /* MOBILE CHANGE: Center items vertically in the box */
+    align-items: center; 
+    justify-content: center;
+  }
+
+  /* --- Banner Content Stacking --- */
+  .banner-content {
+    /* MOBILE CHANGE: Stack vertically */
+    flex-direction: column;
+    
+    /* MOBILE CHANGE: Center everything */
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    gap: 30px; /* Gap between Title and Button */
+  }
+
+  .film-title {
+    font-size: 3rem; 
+    text-align: center; /* Force center align */
+  }
+
+  .streaming-info {
+    text-align: center; /* Force center align */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Other Mobile Adjustments */
+  .projects-title {
+    font-size: 2rem;
+  }
+  
+  .projects-desc {
+    padding: 0 20px;
+    font-size: 1rem;
+  }
+}

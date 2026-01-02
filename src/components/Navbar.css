@@ -1,0 +1,180 @@
+/* src/components/Navbar.css */
+
+/* =========================================
+   1. DESKTOP BASE STYLES
+   ========================================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  
+  /* Sticky Settings */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  /* Visuals */
+  background: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(10px);
+  
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* --- THE SPLITTER LINE --- */
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Sit at the very bottom edge */
+  left: 50%; /* Move to the middle */
+  transform: translateX(-50%); /* Center perfectly */
+  width: 50%; /* Only take up half the screen */
+  height: 1px; /* Thickness */
+  background: rgba(212, 175, 55, 0.3); /* Gold color */
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); /* Optional: Add a glow */
+}
+
+/* --- LOGO STYLING --- */
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 1px;
+  
+  /* Link Fixes */
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo:hover {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.icon-gold {
+  color: var(--color-gold);
+  font-size: 1.8rem;
+}
+
+/* --- DESKTOP MENU LINKS --- */
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-link {
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none; /* Removes underline from links */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover { color: var(--color-gold); }
+.nav-link.active { color: var(--color-gold); }
+
+/* Underline Animation */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease-in-out;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+/* Hamburger Icon (Hidden on Desktop) */
+.menu-icon {
+  display: none;
+}
+
+
+/* =========================================
+   2. TABLET VIEW 
+   ========================================= */
+@media (max-width: 1024px) {
+  .navbar { padding: 15px 30px; }
+  .logo { font-size: 1.3rem; }
+  .nav-links { gap: 25px; }
+  .nav-link { font-size: 0.9rem; }
+  
+  .navbar::after { width: 70%; }
+}
+
+
+/* =========================================
+   3. MOBILE VIEW (Hamburger Mode)
+   ========================================= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 20px;
+    height: 70px;
+  }
+  
+  .navbar::after { 
+    width: 80%; 
+    background: rgba(212, 175, 55, 0.2); 
+  }
+
+  .logo { font-size: 1.2rem; }
+  .icon-gold { font-size: 1.4rem; }
+
+  .menu-icon {
+    display: block; 
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    cursor: pointer;
+    z-index: 1001; /* Ensure icon stays on top */
+  }
+
+  /* --- SLIDE-OUT MENU --- */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0; /* Starts from top to cover full screen */
+    left: -100%;
+    background: #050505; 
+    opacity: 1;
+    transition: all 0.5s ease;
+    align-items: center; 
+    padding-top: 100px; /* Push links down below the header */
+    border-top: none; 
+  }
+
+  .nav-links.active { left: 0; }
+
+  .nav-link {
+    text-align: center;
+    padding: 20px;
+    width: 50%;
+    display: table;
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+  }
+
+  .nav-link:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--color-gold);
+  }
+}

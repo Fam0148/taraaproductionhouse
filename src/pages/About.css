@@ -1,0 +1,205 @@
+/* src/pages/About.css */
+
+/* --- TOP HERO SECTION --- */
+.about-hero {
+  /* Replace with your specific alleyway/studio image */
+  background-image: url('https://images.unsplash.com/photo-1531789058749-c81ce282c3e7?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.about-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* The Main "About Tara Studios" Text */
+.about-main-text {
+  position: relative;
+  z-index: 2;
+  padding-left: 10%; /* Pushes text to the left */
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+ text-shadow: 
+    0 0 10px rgba(212, 175, 55, 0.5),
+    0 0 20px rgba(212, 175, 55, 0.3),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.about-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: #FFF;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  
+  
+}
+
+.about-desc {
+  color: #CCC;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- VISION & MISSION (Floating Text) --- */
+.floating-text {
+  position: absolute;
+  z-index: 2;
+  color: var(--color-gold);
+  max-width: 300px;
+   
+}
+
+.vision-box {
+  bottom: 15%;
+  left: 10%;
+  text-align: left;
+}
+
+.mission-box {
+  bottom: 15%;
+  right: 10%;
+  text-align: right;
+}
+
+.floating-label {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: block;
+  text-shadow: 
+    0 0 10px rgba(212, 175, 55, 0.5),
+    0 0 20px rgba(212, 175, 55, 0.3),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.floating-desc {
+  font-family: var(--font-body);
+  color: #AAA;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- VALUES SECTION (The 3 Icons) --- */
+.values-section {
+  background: radial-gradient(circle at top, #2a2a2a, #000000); /* Spotlight effect */
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.values-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.value-card {
+  max-width: 300px;
+  text-align: center;
+}
+
+.value-icon {
+  font-size: 4rem;
+  color: var(--color-gold);
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.value-title {
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.value-heading {
+  font-family: var(--font-heading);
+  color: #FFF;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.value-text {
+  color: #888;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Reusing the button style from Home */
+.btn-center {
+  margin-top: 40px;
+}
+
+/* --- ADD TO BOTTOM OF src/pages/About.css --- */
+
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column;
+    
+    /* 1. STOP centering. Start from the top. */
+    justify-content: flex-start; 
+    
+    /* 2. Push content down to clear the Navbar */
+    padding-top: 130px; 
+    padding-bottom: 50px;
+    
+    /* 3. Allow page to grow if text is long */
+    height: auto;
+    min-height: 100vh;
+    
+    text-align: center;
+  }
+
+  .about-main-text {
+    padding-left: 0;
+    max-width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+    padding-right: 20px; /* Safety padding */
+    padding-left: 20px;
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  /* Stack floating text below */
+  .floating-text {
+    position: relative; 
+    bottom: auto;
+    left: auto;
+    right: auto;
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .floating-desc{
+    max-width: 350px;
+  }
+
+  .values-grid {
+    gap: 40px;
+  }
+}

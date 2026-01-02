@@ -1,0 +1,135 @@
+/* src/index.css */
+
+/* 1. Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Baumans&family=Inter:wght@300;400&display=swap');
+
+:root {
+  --color-bg: #050505;
+  /* Deep Black */
+  --color-gold: #D4AF37;
+  /* Cinema Gold */
+  --color-text: #a1a1a1;
+  /* Off-white */
+
+  --font-heading: 'Baumans', system-ui, cursive;
+  --font-body: 'Inter', sans-serif;
+  /* Changed 'Open Sauce' to 'Inter' to match import */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: auto;
+  /* Allow body to grow with content */
+  width: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  /* Smoother fonts on Mac */
+}
+
+/* Headings use Baumans automatically */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Helper to fix content hiding behind fixed navbar */
+.page-container {
+  padding-top: 80px;
+}
+
+/* =========================================
+   GLOBAL BUTTON STYLES (.btn-rounded)
+   ========================================= */
+
+/* 1. DESKTOP (Default) */
+.btn-rounded {
+  padding: 20px 40px;
+
+  /* Desktop: Black Background, Gold Text */
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  /* Ensures padding works correctly */
+}
+
+/* Desktop Hover: Turns Gold */
+.btn-rounded:hover {
+  background: var(--color-gold);
+  color: #ffffff;
+  /* Text turns black for contrast */
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  transform: translateY(-3px);
+  border-color: var(--color-gold);
+}
+
+
+/* 2. TABLET RESPONSIVENESS (Max 1024px) */
+@media (max-width: 1024px) {
+  .btn-rounded {
+    padding: 15px 35px;
+    font-size: 0.9rem;
+    /* Smaller Font */
+
+
+    /* Force Solid Gold (No Black) so it's obvious to tap */
+    background: var(--color-gold);
+    color: #ffffff;
+    /* White Text */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+
+/* 3. MOBILE RESPONSIVENESS (Max 768px) */
+@media (max-width: 768px) {
+  .btn-rounded {
+    padding: 12px 25px;
+    font-size: 0.85rem;
+    /* Even Smaller Font */
+    width: 100%;
+    /* Wider button for easier tapping */
+    max-width: 300px;
+    text-align: center;
+
+    /* Force Solid Gold */
+    background: var(--color-gold);
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    line-height: 1.4;
+  }
+}
